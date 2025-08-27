@@ -1,5 +1,5 @@
 import { BiLogoReact } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,30 +12,46 @@ const Header = () => {
       </Link>
 
       <div className="flex items-center gap-5 text-black">
-        <Link
+        <NavLink
           to="/"
-          className="py-1 px-3 text-lg rounded-xl font-light text-white hover:text-sky-300 hover:bg-slate-700 transition duration-300"
+          className={({ isActive }) =>
+            isActive
+              ? "py-1 px-3 text-lg rounded-xl font-light text-sky-300 bg-slate-700"
+              : "py-1 px-3 text-lg rounded-xl font-light text-white hover:text-sky-300 hover:bg-slate-700 transition duration-300"
+          }
         >
           Home
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/about"
-          className="py-1 px-3 text-lg rounded-xl font-light text-white hover:text-sky-300 hover:bg-slate-700 transition duration-300"
+          className={({ isActive }) =>
+            isActive
+              ? "py-1 px-3 text-lg rounded-xl font-light text-sky-300 bg-slate-700"
+              : "py-1 px-3 text-lg rounded-xl font-light text-white hover:text-sky-300 hover:bg-slate-700 transition duration-300"
+          }
         >
           About Us
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/contact"
-          className="py-1 px-3 text-lg rounded-xl font-light text-white hover:text-sky-300 hover:bg-slate-700 transition duration-300"
+          className={({ isActive }) =>
+            isActive
+              ? "py-1 px-3 text-lg rounded-xl font-light text-sky-300 bg-slate-700"
+              : "py-1 px-3 text-lg rounded-xl font-light text-white hover:text-sky-300 hover:bg-slate-700 transition duration-300"
+          }
         >
           Contact
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/products"
-          className="py-1 px-3 text-lg rounded-xl font-light text-white hover:text-sky-300 hover:bg-slate-700 transition duration-300"
+          className={({ isActive }) =>
+            isActive
+              ? "py-1 px-3 text-lg rounded-xl font-light text-sky-300 bg-slate-700"
+              : "py-1 px-3 text-lg rounded-xl font-light text-white hover:text-sky-300 hover:bg-slate-700 transition duration-300"
+          }
         >
           Products
-        </Link>
+        </NavLink>
       </div>
     </header>
   );
